@@ -29,7 +29,7 @@ if ($is_C2_running){
         mkdir $dest_dir_date
     }catch{}
 
-    Copy-Item -Path "C:\Users\Admin\Documents\Creatures\Creatures 2\*" -Destination $dest_dir_date -Recurse
+    Copy-Item -Path "C:\Users\$env:UserName\Documents\Creatures\Creatures 2\*" -Destination $dest_dir_date -Recurse
 
     Compress-Archive -Path $dest_dir_date -DestinationPath "$dest_dir\$cur_date.zip"
     Remove-Item $dest_dir_date -Recurse
